@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Message sent! (You can later connect this to EmailJS or API)");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <section id="contact" className="max-w-xl mx-auto text-center">
+      <h2 className="text-3xl font-semibold text-gray-900 mb-6">Contact Me</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          className="w-full p-3 border rounded"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          className="w-full p-3 border rounded"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          className="w-full p-3 border rounded h-32"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700">
+          Send Message
+        </button>
+      </form>
+    </section>
+  );
+}
