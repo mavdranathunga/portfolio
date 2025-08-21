@@ -2,15 +2,15 @@ import React from "react";
 
 export default function Skills() {
   return (
-    <section id="skills" className="space-y-6">
-      <h2 className="text-3xl font-semibold text-center text-gray-900">Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700 text-center">
-        <div className="p-4 bg-white rounded-lg shadow">AWS, Azure</div>
-        <div className="p-4 bg-white rounded-lg shadow">Docker, Kubernetes, Helm</div>
-        <div className="p-4 bg-white rounded-lg shadow">Terraform, Ansible</div>
-        <div className="p-4 bg-white rounded-lg shadow">Jenkins, GitHub Actions</div>
-        <div className="p-4 bg-white rounded-lg shadow">Prometheus, Grafana</div>
-        <div className="p-4 bg-white rounded-lg shadow">Python, Bash, Go</div>
+    <section className="w-full py-20 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 text-center">
+      <h2 data-aos="fade-right" className="text-3xl font-semibold mb-8">Skills</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-4xl mx-auto">
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">AWS, Azure</div>
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">Docker, Kubernetes, Helm</div>
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">Terraform, Ansible</div>
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">Jenkins, GitHub Actions</div>
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">Prometheus, Grafana</div>
+        <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">Python, Bash, Go</div>
       </div>
     </section>
   );
