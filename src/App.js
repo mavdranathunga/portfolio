@@ -1,4 +1,5 @@
 import React from "react";
+import FadeInWhenVisible from "./components/FadeInWhenVisible";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -12,12 +13,24 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <main className="max-w-6xl mx-auto px-4 py-10 space-y-16">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Certifications />
-        <Contact />
+        <FadeInWhenVisible>
+          <Hero />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={0.2}>
+          <About />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={0.4}>
+          <Skills />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={0.6}>
+          <Projects />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={0.8}>
+          <Certifications />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={1}>
+          <Contact />
+        </FadeInWhenVisible>
       </main>
     </div>
   );
