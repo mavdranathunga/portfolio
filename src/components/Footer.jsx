@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 text-center py-10 mt-16 border-t border-gray-300 dark:border-gray-700">
+    <footer className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-center py-10 mt-16 border-t border-gray-300 dark:border-gray-700">
       <div className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
         Deshan Ranathunga
       </div>
