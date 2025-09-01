@@ -1,71 +1,85 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
+const devopsProjects = [
+	{
+		title: "Cloud Infra Automation",
+		description:
+			"Automated multi-cloud infrastructure provisioning using Terraform and Ansible.",
+		liveLink: "#",
+		sourceCode: "#",
+		image: "",
+		tags: ["Terraform", "AWS", "Azure", "Ansible"],
+	},
+	{
+		title: "Kubernetes Monitoring",
+		description:
+			"End-to-end monitoring stack for Kubernetes clusters using Prometheus and Grafana.",
+		liveLink: "#",
+		sourceCode: "#",
+		image: "",
+		tags: ["Kubernetes", "Prometheus", "Grafana"],
+	},
+];
+
+const webProjects = [
+	{
+		title: "Portfolio Web App",
+		description:
+			"Modern, animated portfolio built with React and Tailwind CSS.",
+		liveLink: "#",
+		sourceCode: "#",
+		image: "",
+		tags: ["React", "Tailwind", "Framer Motion"],
+	},
+	{
+		title: "E-commerce Dashboard",
+		description: "Responsive dashboard for managing products and orders.",
+		liveLink: "#",
+		sourceCode: "#",
+		image: "",
+		tags: ["React", "Redux", "Chart.js"],
+	},
+];
 
 export default function Projects() {
-  return (
-    <section className="w-full py-20 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 text-center">
-      <h2 data-aos="fade-right" className="text-3xl font-semibold mb-8">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 px-4 max-w-5xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
-          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">CI/CD Pipeline Automation</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            Automated build & deployment workflows using GitHub Actions, Docker, and AWS ECS.
-          </p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
-          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Kubernetes Monitoring Stack</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-          Deployed Prometheus and Grafana to monitor applications and infrastructure on a Kubernetes cluster with Helm charts and alerts.
-          </p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
-          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">CI/CD Pipeline Automation</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-          Built a scalable CI/CD pipeline using Jenkins and Docker on AWS. Reduced deployment time by 60% and enabled daily production releases.
-          </p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
-          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Kubernetes Monitoring Stack</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-          Deployed Prometheus and Grafana to monitor applications and infrastructure on a Kubernetes cluster with Helm charts and alerts.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-center gap-4 my-12">
-        <div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
-        <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-widest">
-          Featured Web Apps
-        </span>
-        <div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
-      </div>
-      {/* Enhanced Project Cards (Real Web Apps) */}
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <ProjectCard
-        title="Wood Store"
-        description="This web app is created for a wood store."
-        liveLink="https://pgp-woods.netlify.app/"
-        sourceCode="https://github.com/mavdranathunga/wood_store"
-        image="../images/WoodStore.png"
-        tags={["React", "Node.js"]}
-        />
-        <ProjectCard
-        title="Edu Plus+"
-        description="Web app containing Road maps for students."
-        liveLink="https://eduplus-cce40.web.app/"
-        sourceCode="https://github.com/mavdranathunga/eduplus"
-        image="src\images\Eduplus.png"
-        tags={["React", "Node.js"]}
-        />
-        <ProjectCard
-        title="Plant Growth Monitoring"
-        description="Lettuce growth and Health monitoring app"
-        liveLink="https://eduplus-cce40.web.app/"
-        sourceCode="https://github.com/mavdranathunga/eduplus"
-        image=""
-        tags={["React", "Node.js"]}
-        />
-      </div>
-    </section>
-  );
+	return (
+		<section
+			id="projects"
+			className="min-h-screen flex flex-col items-center justify-center bg-transparent"
+		>
+			<motion.div
+				initial={{ opacity: 0, y: 40 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.7 }}
+				className="relative bg-white/80 dark:bg-[#101a33]/80 backdrop-blur-xl rounded-3xl shadow-2xl p-10 max-w-4xl mx-auto text-center border border-blue-100 dark:border-blue-900"
+			>
+				<h2 className="text-3xl font-bold text-blue-700 dark:text-blue-200 mb-8">
+					Projects
+				</h2>
+				<div className="mb-10">
+					<h3 className="text-2xl font-semibold text-green-700 dark:text-green-400 mb-4">
+						DevOps Projects
+					</h3>
+					<div className="grid md:grid-cols-2 gap-8">
+						{devopsProjects.map((project, idx) => (
+							<ProjectCard key={idx} {...project} />
+						))}
+					</div>
+				</div>
+				<div>
+					<h3 className="text-2xl font-semibold text-purple-700 dark:text-purple-400 mb-4">
+						Featured Web Projects
+					</h3>
+					<div className="grid md:grid-cols-2 gap-8">
+						{webProjects.map((project, idx) => (
+							<ProjectCard key={idx} {...project} />
+						))}
+					</div>
+				</div>
+			</motion.div>
+		</section>
+	);
 }

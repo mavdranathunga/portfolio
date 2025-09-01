@@ -8,10 +8,7 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-
-import FadeInWhenVisible from "./components/FadeInWhenVisible";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,49 +17,25 @@ export default function App() {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 700,
-      once: true,
-      easing: 'ease-in-out',
-    });
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-      <Header toggleDarkMode={() => setDarkMode(!darkMode)} />
-      <main className="max-w-6xl mx-auto px-4 py-10 space-y-16">
-        <FadeInWhenVisible>
-          <section id="hero" className="min-h-screen w-full flex flex-col items-center justify-center text-center">
-            <Hero />
-          </section>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.2}>
-          <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center text-center">
-            <About />
-          </section>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.3}>
-          <section id="skills">
-            <Skills />
-          </section>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.3}>
-          <section id="projects">
-            <Projects />
-          </section>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.3}>
-          <section id="certifications">
-            <Certifications />
-          </section>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.4}>
-          <section id="contact">
-            <Contact />
-          </section>
-        </FadeInWhenVisible>
-      </main>
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-100 to-blue-50 dark:from-[#0a1124] dark:via-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
+      <Header toggleDarkMode={() => setDarkMode(!darkMode)} darkMode={darkMode} />
+      <AnimatePresence>
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-5xl mx-auto px-4 py-10 space-y-24"
+        >
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Certifications />
+          <Contact />
+        </motion.main>
+      </AnimatePresence>
       <Footer />
       <ScrollToTop />
     </div>
