@@ -60,9 +60,19 @@ export default function Projects() {
 					Projects
 				</h2>
 				<div className="mb-10">
-					<h3 className="text-2xl font-semibold text-green-700 dark:text-green-400 mb-4">
+
+					<div className="flex items-center gap-4 my-12">
+					<div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
+					<span className="text-green-700 dark:text-green-400 text-lg uppercase tracking-widest">
 						DevOps Projects
-					</h3>
+					</span>
+					<div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
+					</div>
+
+					{/* <h3 className="text-2xl font-semibold text-green-700 dark:text-green-400 mb-4">
+						DevOps Projects
+					</h3> */}
+
 					<div className="grid md:grid-cols-2 gap-8">
 						{devopsProjects.map((project, idx) => (
 							<ProjectCard key={idx} {...project} />
@@ -70,9 +80,18 @@ export default function Projects() {
 					</div>
 				</div>
 				<div>
-					<h3 className="text-2xl font-semibold text-purple-700 dark:text-purple-400 mb-4">
+					<div className="flex items-center gap-4 my-12">
+					<div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
+					<span className="text-purple-700 dark:text-purple-400 text-lg uppercase tracking-widest">
+						Featured Web Apps
+					</span>
+					<div className="flex-grow border-t border-gray-300 dark:border-zinc-700"></div>
+					</div>
+
+					{/* <h3 className="text-2xl font-semibold text-purple-700 dark:text-purple-400 mb-4">
 						Featured Web Projects
-					</h3>
+					</h3> */}
+
 					<div className="grid md:grid-cols-2 gap-8">
 						{webProjects.map((project, idx) => (
 							<ProjectCard key={idx} {...project} />

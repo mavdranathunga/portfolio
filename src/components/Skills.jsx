@@ -78,7 +78,7 @@ export default function Skills() {
 										</span>
 										<div className="w-32 bg-slate-200 dark:bg-slate-800 rounded-full h-3">
 											<motion.div
-												className="bg-gradient-to-r from-blue-700 via-green-500 to-purple-600 h-3 rounded-full"
+												className="bg-gradient-to-r from-blue-600 to-blue-400 h-3 rounded-full"
 												initial={{ width: 0 }}
 												whileInView={{ width: `${skill.level}%` }}
 												viewport={{ once: true }}
